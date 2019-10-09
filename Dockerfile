@@ -12,6 +12,8 @@ RUN npm run build
 
 # next phase
 FROM nginx
+# needed for AWS
+EXPOSE 80
 COPY --from=builder /app/dist/frontend-angular /usr/share/nginx/html
 
 # autostart, niet nodig
